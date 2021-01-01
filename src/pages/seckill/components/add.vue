@@ -1,14 +1,6 @@
 <template>
   <div>
-<<<<<<< HEAD
-    <el-dialog
-      :title="info.isadd?'添加秒杀':'编辑秒杀'"
-      :visible.sync="info.isshow"
-      @closed="cancel"
-    >
-=======
     <el-dialog :title="info.isadd?'添加秒杀':'编辑秒杀'" :visible.sync="info.isshow" @closed="cancel">
->>>>>>> 6209bee (tjjj)
       <el-form :model="user">
         <div>user:{{user}}</div>
         <el-form-item label="活动名称" label-width="100px">
@@ -79,24 +71,13 @@ import {
   reqgoodslist,
   reqseckillAdd,
   reqseckillDetail,
-<<<<<<< HEAD
-  reqseckillUpdate,
-  reqgoodsAdd,
-  reqgoodsDetail,
-  reqgoodsUpdate
-=======
   reqseckillUpdate
->>>>>>> 6209bee (tjjj)
 } from "../../../utils/http";
 import { successalert, erroralert } from "../../../utils/alert";
 export default {
   props: ["info"],
   data() {
     return {
-<<<<<<< HEAD
-      // 1.初始化数据
-=======
->>>>>>> 6209bee (tjjj)
       user: {
         title: "",
         goodsid: "",
@@ -106,10 +87,6 @@ export default {
         second_cateid: "",
         status: 1
       },
-<<<<<<< HEAD
-      //4.二级分类的列表
-=======
->>>>>>> 6209bee (tjjj)
       secondCateList: [],
       goodsArr: [],
       value: null
@@ -117,25 +94,12 @@ export default {
   },
   computed: {
     ...mapGetters({
-<<<<<<< HEAD
-      //3.1 分类的list
       cateList: "cate/list",
-      //7.1 规格的list
-=======
-      cateList: "cate/list",
->>>>>>> 6209bee (tjjj)
       goodslist: "goods/list"
     })
   },
   methods: {
     ...mapActions({
-<<<<<<< HEAD
-      //3.2分类列表的获取
-      reqCateList: "cate/reqList",
-      //7.2 规格列表的获取
-      reqgoodslist: "goods/reqList"
-    }),
-=======
       reqCateList: "cate/reqList",
       reqgoodslist: "goods/reqList"
     }),
@@ -160,7 +124,6 @@ export default {
         resolve();
       });
     },
->>>>>>> 6209bee (tjjj)
     //二级分类
     changecate() {
       this.user.second_cateid = "";
@@ -202,66 +165,13 @@ export default {
         second_cateid: "",
         status: 1,
         beginittime: "",
-<<<<<<< HEAD
-        endtime: "",
-=======
         endtime: ""
->>>>>>> 6209bee (tjjj)
       };
       this.secondCateList = [];
       this.goodsArr = [];
       this.value = null;
     },
     add() {
-<<<<<<< HEAD
-      this.user.begintime = this.value[0].getTime();
-      this.user.endtime = this.value[1].getTime();
-      console.log(this.user)
-      reqseckillAdd(this.user).then(res => {
-        if (res.data.code == 200) {
-          this.cancel();
-          this.empty();
-          successalert(res.data.msg);
-        }
-      });
-       this.$emit("init")
-    },
-    //获取一条数据
-    getOne(id) {
-     reqseckillDetail({id:id}).then(res=>{
-       this.user = res.data.list
-       this.user.id=id
-       console.log(this.user)
-        this.getgoodsList();
-        this.getSecondList();
-          this.value = [
-          new Date(parseFloat(this.user.begintime)),
-          new Date(parseFloat(this.user.endtime)),
-        ];
-     })
-
-    },
-    //修改
-    update() {
-      this.user.begintime = this.value[0].getTime();
-      this.user.endtime = this.value[1].getTime();
-      reqseckillUpdate(this.user).then(res=>{
-        if (res.data.code == 200) {
-          this.cancel();
-          this.empty();
-          successalert(res.data.msg);
-        }
-      })
-       this.$emit("init")
-    }
-  },
-  mounted() {
-    //3.3如果没有请过分类数据，就发一下请求
-    if (this.cateList.length === 0) {
-      this.reqCateList();
-    }
-
-=======
       if (this.value === null) {
         erroralert("时间不能为空");
         return;
@@ -318,7 +228,6 @@ export default {
     if (this.cateList.length === 0) {
       this.reqCateList();
     }
->>>>>>> 6209bee (tjjj)
   }
 };
 </script>

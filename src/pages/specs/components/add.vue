@@ -1,36 +1,18 @@
 <template>
   <div>
-<<<<<<< HEAD
-      <el-dialog :title="info.isadd?'添加规格':'编辑规格'" :visible.sync="info.isshow" @closed="cancel">
-     
-      <el-form :model="user">
-        <div>
-          user:{{user}}
-        </div>
-        <div>
-          attrsArr:{{attrsArr}}
-        </div>
-=======
     <el-dialog :title="info.isadd?'添加规格':'编辑规格'" :visible.sync="info.isshow" @closed="cancel">
       <el-form :model="user">
         <div>user:{{user}}</div>
         <div>attrsArr:{{attrsArr}}</div>
->>>>>>> 6209bee (tjjj)
         <el-form-item label="规格名称" label-width="100px">
           <el-input v-model="user.specsname"></el-input>
         </el-form-item>
 
-<<<<<<< HEAD
-        <el-form-item label="规格属性" label-width="100px"
-        v-for="(item,index) in attrsArr"
-        :key="index"
-=======
         <el-form-item
           label="规格属性"
           label-width="100px"
           v-for="(item,index) in attrsArr"
           :key="index"
->>>>>>> 6209bee (tjjj)
         >
           <div class="line">
             <el-input class="line-ipt" v-model="item.value"></el-input>
@@ -39,11 +21,6 @@
           </div>
         </el-form-item>
 
-<<<<<<< HEAD
-        
-
-=======
->>>>>>> 6209bee (tjjj)
         <el-form-item label="状态" label-width="100px">
           <el-switch v-model="user.status" :active-value="1" :inactive-value="2"></el-switch>
         </el-form-item>
@@ -59,28 +36,6 @@
 </template>
   <script>
 import { mapActions, mapGetters } from "vuex";
-<<<<<<< HEAD
-import { reqspecsAdd, reqspecsDetail} from '../../../utils/http';
-import { successalert } from '../../../utils/alert';
-export default {
-  props:["info"],
-  data() {
-    return {
-      user:{
-        specsname:"",
-        attrs:"[]",
-        status:1
-      },
-      attrsArr:[
-        {value:""}
-      ]
-    };
-  },
-  computed: {
-    ...mapGetters({
-      
-    })
-=======
 import {
   reqspecsAdd,
   reqspecsDetail,
@@ -101,69 +56,10 @@ export default {
   },
   computed: {
     ...mapGetters({})
->>>>>>> 6209bee (tjjj)
   },
   methods: {
     ...mapActions({
       reqList: "specs/reqList",
-<<<<<<< HEAD
-       reqTotal:"specs/reqTotal",
-    }),
-    cancel(){
-      if(!this.info.isadd){
-        this.empty()
-      }
-      this.info.isshow=false;
-    },
-    addAttr(){
-      this.attrsArr.push({value:""})
-    },
-    delAttr(index){
-      this.attrsArr.splice(index,1)
-    },
-    empty(){
-      this.user={
-        specsname:"",
-        attrs:"[]",
-        status:1
-      };
-      this.attrsArr=[
-        {value:""}
-      ]
-    },
-    add(){
-      this.user.attrs=JSON.stringify(this.attrsArr.map(item=>item.value))
-      reqspecsAdd(this.user).then(res=>{
-        if(res.data.code==200){
-          this.cancel()
-          this.empty()
-          successalert(res.data.msg)
-          this.reqList()
-          this.reqTotal()
-        }
-      })
-    },
-    getOne(id){
-      reqspecsDetail({id:id}).then(res=>{
-        if(res.data.code==200){
-          this.user=res.data.list[0]
-          this.user.attrs=JSON.parse(this.user.attrs);
-          this.attrsArr=this.user.attrs.map(item=>({value:item}))
-
-        }
-      })
-    },
-    update(){
-      this.user.attrs=JSON.stringify(this.attrsArr.map(item=>item.value))
-      reqspecsUpdate(this.user).then(res=>{
-         if(res.data.code==200){
-          this.cancel()
-          this.empty()
-          successalert(res.data.msg)
-          this.reqList()
-        }
-      })
-=======
       reqTotal: "specs/reqTotal"
     }),
     cancel() {
@@ -234,7 +130,6 @@ export default {
           }
         });
       });
->>>>>>> 6209bee (tjjj)
     }
   },
   mounted() {}
@@ -242,15 +137,6 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
-.line{
-  display: flex;
-}
-.line-btn{
-  width: auto;
-}
-.line-ipt{
-=======
 .line {
   display: flex;
 }
@@ -258,7 +144,6 @@ export default {
   width: auto;
 }
 .line-ipt {
->>>>>>> 6209bee (tjjj)
   flex: 1;
 }
 </style>

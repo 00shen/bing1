@@ -11,10 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-<<<<<<< HEAD
-=======
     "echarts": "^5.0.0",
->>>>>>> 6209bee (tjjj)
     "element-ui": "^2.14.1",
     "qs": "^6.9.4",
     "stylus": "^0.54.8",

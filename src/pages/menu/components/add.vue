@@ -1,22 +1,12 @@
 <template>
   <div>
-<<<<<<< HEAD
-    <el-dialog :title="info.isadd?'添加菜单':'编辑菜单'" :visible.sync="info.isshow"
-    @closed="cancel"
-    >
-=======
     <el-dialog :title="info.isadd?'添加菜单':'编辑菜单'" :visible.sync="info.isshow" @closed="cancel">
->>>>>>> 6209bee (tjjj)
       <el-form :model="user">
         <el-form-item label="菜单名称" label-width="100px">
           <el-input v-model="user.title" autocomplete="off"></el-input>
         </el-form-item>
-<<<<<<< HEAD
-        <el-form-item label="上级菜单" label-width="100px">
-=======
         <el-form-item label="上级菜单" label-width="100px"
         @change="qc">
->>>>>>> 6209bee (tjjj)
           <el-select v-model="user.pid" @change="changePid">
             <el-option :value="0" label="顶级菜单"></el-option>
             <el-option v-for="item in list" :key="item.id" :value="item.id" :label="item.title"></el-option>
@@ -47,11 +37,6 @@
           <el-switch v-model="user.status" :active-value="1" :inactive-value="2"></el-switch>
         </el-form-item>
       </el-form>
-<<<<<<< HEAD
-      
-=======
-
->>>>>>> 6209bee (tjjj)
       <div slot="footer" class="dialog-footer">
         <el-button @click="cancel">取 消</el-button>
         <el-button type="primary" @click="add" v-if="info.isadd">添 加</el-button>
@@ -64,15 +49,9 @@
 <script>
 import { indexRoutes } from "../../../router";
 import { reqMenuAdd, reqMenuDetail, reqMenuUpdate } from "../../../utils/http";
-<<<<<<< HEAD
-import { successalert } from "../../../utils/alert";
-export default {
-  props: ["info","list"],
-=======
 import { successalert,erroralert } from "../../../utils/alert";
 export default {
   props: ["info", "list"],
->>>>>>> 6209bee (tjjj)
   data() {
     return {
       user: {
@@ -95,13 +74,8 @@ export default {
   },
   methods: {
     cancel() {
-<<<<<<< HEAD
-      if(!this.info.isadd){
-        this.empty()
-=======
       if (!this.info.isadd) {
         this.empty();
->>>>>>> 6209bee (tjjj)
       }
       this.info.isshow = false;
     },
@@ -115,43 +89,6 @@ export default {
         status: 1
       };
     },
-<<<<<<< HEAD
-    add() {
-      reqMenuAdd(this.user).then(res => {
-        if (res.data.code == 200) {
-          successalert(res.data.msg);
-          this.cancel();
-          this.empty();
-          this.$emit("init")
-        }
-      });
-    },
-    changePid(){
-      if(this.user.pid==0){
-        this.user.type=1
-      }else{
-        this.user.type=2;
-      }
-    },
-    getOne(id){
-      reqMenuDetail({id:id}).then(res=>{
-        if(res.data.code==200){
-          this.user=res.data.list
-          this.user.id=id;
-        }
-      })
-    },
-
-    update(){
-      reqMenuUpdate(this.user).then(res=>{
-        if(res.data.code==200){
-          successalert(res.data.msg)
-          this.cancel()
-          this.empty()
-          this.$emit("init")
-        }
-      })
-=======
     qc(){
       this.user.icon="",
       this.user.url=""
@@ -212,7 +149,6 @@ export default {
           }
         });
       });
->>>>>>> 6209bee (tjjj)
     }
   }
 };

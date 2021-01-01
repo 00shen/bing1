@@ -11,17 +11,10 @@
 
       <el-table-column prop="title" label="轮播图标题" sortable width="180"></el-table-column>
 
-<<<<<<< HEAD
-      <el-table-column label="图片" sortable width="180">
-        <template v-for="item in list.img" slot-scope="scope">
-          <img  :key="item.id" :src="$pre+scope.row.img" alt  :title="$pre+scope.row.img"/>
-        </template>
-=======
      <el-table-column  label="图片" sortable width="180">
           <template slot-scope="scope">
               <img v-if="scope.row.img!=='null'" :src="$pre+scope.row.img" alt="">
           </template>
->>>>>>> 6209bee (tjjj)
       </el-table-column>
 
       <el-table-column label="状态">

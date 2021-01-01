@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-export let state={}
-export let getters={}
-export let mutations={}
-=======
 export let state={
     userInfo:sessionStorage.getItem("userInfo")?JSON.parse(sessionStorage.getItem("userInfo")):{}
 }
@@ -23,4 +18,3 @@ export let mutations={
         
     }
 }
->>>>>>> 6209bee (tjjj)

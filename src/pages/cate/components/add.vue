@@ -40,15 +40,6 @@
 <script>
 import { reqcateAdd, reqcateDetail, reqcateUpdate } from "../../../utils/http";
 import { successalert, erroralert } from "../../../utils/alert";
-<<<<<<< HEAD
-import {mapActions,mapGetters} from "vuex"
-import path from "path";
-export default {
-  props: ["info"],
-  computed:{
-    ...mapGetters({
-      list:"cate/list"
-=======
 import { mapActions, mapGetters } from "vuex";
 import path from "path";
 export default {
@@ -56,7 +47,6 @@ export default {
   computed: {
     ...mapGetters({
       list: "cate/list"
->>>>>>> 6209bee (tjjj)
     })
   },
   data() {
@@ -73,11 +63,7 @@ export default {
   methods: {
     ...mapActions({
       ...mapActions({
-<<<<<<< HEAD
-        "reqList":"cate/reqList"
-=======
         reqList: "cate/reqList"
->>>>>>> 6209bee (tjjj)
       })
     }),
     changeImg(e) {
@@ -94,13 +80,8 @@ export default {
       }
       this.imgUrl = URL.createObjectURL(file);
       this.user.img = file;
-<<<<<<< HEAD
-      console.log(this.imgUrl)
-      console.log(this.user.img)
-=======
       console.log(this.imgUrl);
       console.log(this.user.img);
->>>>>>> 6209bee (tjjj)
     },
     cancel() {
       if (!this.info.isadd) {
@@ -109,24 +90,6 @@ export default {
       this.info.isshow = false;
     },
     empty() {
-<<<<<<< HEAD
-      this.imgUrl="",
-      this.user = {
-        pid: "",
-        catename: "",
-        img: null,
-        status: 1
-      };
-    },
-    add() {
-      reqcateAdd(this.user).then(res => {
-        if (res.data.code == 200) {
-          successalert(res.data.msg);
-          this.cancel();
-          this.empty();
-          this.reqList()
-        }
-=======
       (this.imgUrl = ""),
         (this.user = {
           pid: "",
@@ -166,7 +129,6 @@ export default {
             this.reqList();
           }
         });
->>>>>>> 6209bee (tjjj)
       });
     },
     getOne(id) {
@@ -179,15 +141,6 @@ export default {
       });
     },
     update() {
-<<<<<<< HEAD
-      reqcateUpdate(this.user).then(res => {
-        if (res.data.code == 200) {
-          successalert(res.data.msg);
-          this.cancel();
-          this.empty();
-          this.reqList()
-        }
-=======
       this.checkProps().then(() => {
         reqcateUpdate(this.user).then(res => {
           if (res.data.code == 200) {
@@ -197,7 +150,6 @@ export default {
             this.reqList();
           }
         });
->>>>>>> 6209bee (tjjj)
       });
     }
   }
@@ -240,10 +192,6 @@ export default {
   top: 0;
 }
 
-<<<<<<< HEAD
-// 穿透
-=======
->>>>>>> 6209bee (tjjj)
 /* element-ui的样式 */
 .form >>>.el-upload {
   border: 1px dashed #d9d9d9;

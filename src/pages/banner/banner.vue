@@ -2,14 +2,7 @@
   <div>
 
     <el-button type="primary" @click="willAdd">添加</el-button>
-<<<<<<< HEAD
-
     <v-list :list="list" @init="init" @edit="edit($event)"></v-list>
-
-
-=======
-    <v-list :list="list" @init="init" @edit="edit($event)"></v-list>
->>>>>>> 6209bee (tjjj)
     <v-add :info="info" @init="init" :list="list" ref="add"></v-add>
   </div>
 </template>

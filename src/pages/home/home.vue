@@ -1,19 +1,5 @@
 <template>
   <div>
-<<<<<<< HEAD
-      shouye
-  </div>
-</template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-=======
     <div id="main"></div>
   </div>
 </template>
@@ -77,5 +63,4 @@ export default {
   border: 1px solid orange;
   margin: 20px auto;
 }
->>>>>>> 6209bee (tjjj)
 </style>

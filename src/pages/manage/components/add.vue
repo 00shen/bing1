@@ -5,10 +5,6 @@
         {{user}}
         <el-form-item label="所属角色" label-width="100px">
           <el-select v-model="user.roleid">
-<<<<<<< HEAD
-            <el-option label="--请选择--" value="" disabled></el-option>
-            <el-option v-for="item in roleList" :key="item.id" :label="item.rolename" :value="item.id"></el-option>
-=======
             <el-option label="--请选择--" value disabled></el-option>
             <el-option
               v-for="item in roleList"
@@ -16,7 +12,6 @@
               :label="item.rolename"
               :value="item.id"
             ></el-option>
->>>>>>> 6209bee (tjjj)
           </el-select>
         </el-form-item>
         <el-form-item label="用户名称" label-width="100px">
@@ -26,11 +21,6 @@
           <el-input v-model="user.password" autocomplete="off"></el-input>
         </el-form-item>
 
-<<<<<<< HEAD
-        
-
-=======
->>>>>>> 6209bee (tjjj)
         <el-form-item label="状态" label-width="100px">
           <el-switch v-model="user.status" :active-value="1" :inactive-value="2"></el-switch>
         </el-form-item>
@@ -46,31 +36,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import { reqRoleAdd, reqMenuDetail, reqMenuUpdate, reqMenulist, reqRoleDetail, reqRoleUpdate, reqRolelist, reqManageAdd, reqManageDetail, reqManageUpdate } from "../../../utils/http";
-import { successalert } from "../../../utils/alert";
-export default {
-
-  props: ["info", "list"],
-  data() {
-    return {
-      roleList:[],
-      user: {
-        roleid:"",
-        username:"",
-        password:"",
-        status:1
-      },
-     
-    };
-  },
-  mounted(){
-    reqRolelist().then(res=>{
-      if(res.data.code==200){
-        this.roleList=res.data.list
-      }
-    })
-=======
 import {
   reqRolelist,
   reqManageAdd,
@@ -97,7 +62,6 @@ export default {
         this.roleList = res.data.list;
       }
     });
->>>>>>> 6209bee (tjjj)
   },
   methods: {
     cancel() {
@@ -108,19 +72,6 @@ export default {
     },
     empty() {
       this.user = {
-<<<<<<< HEAD
-        roleid:"",
-        username:"",
-        password:"",
-        status:1
-      };
-    },
-
-    add() {
-      reqManageAdd(this.user).then(res => {
-        if (res.data.code == 200) {
-
-=======
         roleid: "",
         username: "",
         password: "",
@@ -148,7 +99,6 @@ export default {
       this.checkProps().then(()=>{
         reqManageAdd(this.user).then(res => {
         if (res.data.code == 200) {
->>>>>>> 6209bee (tjjj)
           successalert(res.data.msg);
 
           this.cancel();
@@ -157,10 +107,7 @@ export default {
           this.$emit("init");
         }
       });
-<<<<<<< HEAD
-=======
       })
->>>>>>> 6209bee (tjjj)
     },
     changePid() {
       if (this.user.pid == 0) {
@@ -172,23 +119,14 @@ export default {
     getOne(id) {
       reqManageDetail({ uid: id }).then(res => {
         if (res.data.code == 200) {
-<<<<<<< HEAD
-         this.user=res.data.list
-         this.user.password=""
-=======
           this.user = res.data.list;
           this.user.password = "";
->>>>>>> 6209bee (tjjj)
         }
       });
     },
     update() {
-<<<<<<< HEAD
-      reqManageUpdate(this.user).then(res => {
-=======
       this.checkProps().then(()=>{
         reqManageUpdate(this.user).then(res => {
->>>>>>> 6209bee (tjjj)
         if (res.data.code == 200) {
           successalert(res.data.msg);
           this.cancel();
@@ -196,10 +134,7 @@ export default {
           this.$emit("init");
         }
       });
-<<<<<<< HEAD
-=======
       })
->>>>>>> 6209bee (tjjj)
     }
   }
 };

@@ -6,10 +6,6 @@
       @closed="cancel"
       @opened="opened"
     >
-<<<<<<< HEAD
-      <!-- 2.v-model绑定user -->
-=======
->>>>>>> 6209bee (tjjj)
       <el-form :model="user">
         <div>user:{{user}}</div>
 
@@ -81,10 +77,6 @@
           <el-switch v-model="user.status" :active-value="1" :inactive-value="2"></el-switch>
         </el-form-item>
         <el-form-item label="商品描述" label-width="100px">
-<<<<<<< HEAD
-          <!-- 富文本编辑器 -->
-=======
->>>>>>> 6209bee (tjjj)
           <div id="editor" v-if="info.isshow"></div>
         </el-form-item>
       </el-form>
@@ -106,11 +98,7 @@ import {
   reqgoodsDetail,
   reqgoodsUpdate
 } from "../../../utils/http";
-<<<<<<< HEAD
-import { successalert } from "../../../utils/alert";
-=======
 import { successalert,erroralert } from "../../../utils/alert";
->>>>>>> 6209bee (tjjj)
 export default {
   props: ["info"],
   data() {
@@ -151,8 +139,6 @@ export default {
       this.user.second_cateid = "";
       this.getSecondList();
     },
-<<<<<<< HEAD
-=======
      checkProps() {
       return new Promise((resolve, reject) => {
         if (this.user.first_cateid === "") {
@@ -199,7 +185,6 @@ export default {
         resolve();
       });
     },
->>>>>>> 6209bee (tjjj)
     //分类
     getSecondList() {
       reqcatelist({ pid: this.user.first_cateid }).then(res => {
@@ -259,12 +244,8 @@ export default {
         ...this.user,
         specsattr: JSON.stringify(this.user.specsattr)
       };
-<<<<<<< HEAD
-      reqgoodsAdd(data).then(res => {
-=======
       this.checkProps().then(()=>{
         reqgoodsAdd(data).then(res => {
->>>>>>> 6209bee (tjjj)
         if (res.data.code == 200) {
           this.cancel();
           this.empty();
@@ -273,10 +254,7 @@ export default {
           this.reqTotal();
         }
       });
-<<<<<<< HEAD
-=======
       })
->>>>>>> 6209bee (tjjj)
     },
     getOne(id) {
       reqgoodsDetail({ id: id }).then(res => {
@@ -299,12 +277,8 @@ export default {
         ...this.user,
         specsattr: JSON.stringify(this.user.specsattr)
       };
-<<<<<<< HEAD
-      reqgoodsUpdate(data).then(res => {
-=======
       this.checkProps().then(()=>{
         reqgoodsUpdate(data).then(res => {
->>>>>>> 6209bee (tjjj)
         if (res.data.code == 200) {
           this.cancel();
           this.empty();
@@ -312,10 +286,7 @@ export default {
           this.reqList();
         }
       });
-<<<<<<< HEAD
-=======
       })
->>>>>>> 6209bee (tjjj)
     },
     opened() {
       this.editor = new E("#editor");
@@ -324,18 +295,9 @@ export default {
     }
   },
   mounted() {
-<<<<<<< HEAD
-    //3.3如果没有请过分类数据，就发一下请求
     if (this.cateList.length === 0) {
       this.reqCateList();
     }
-
-    //7.3 请求规格list
-=======
-    if (this.cateList.length === 0) {
-      this.reqCateList();
-    }
->>>>>>> 6209bee (tjjj)
     this.reqSpecsList(true);
   }
 };

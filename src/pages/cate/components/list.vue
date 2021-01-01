@@ -9,19 +9,12 @@
     >
       <el-table-column prop="id" label="分类编号" sortable width="180"></el-table-column>
       <el-table-column prop="catename" label="分类名称" sortable width="180"></el-table-column>
-<<<<<<< HEAD
-=======
-
->>>>>>> 6209bee (tjjj)
       <el-table-column  label="图片" sortable width="180">
           <template slot-scope="scope">
               <img v-if="scope.row.img!=='null'" :src="$pre+scope.row.img" alt="">
           </template>
       </el-table-column>
-<<<<<<< HEAD
-=======
       
->>>>>>> 6209bee (tjjj)
       <el-table-column label="状态">
         <template slot-scope="scope">
           <el-button type="primary" v-if="scope.row.status===1">启用</el-button>

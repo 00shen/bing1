@@ -28,11 +28,7 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import { reqMenuDel, reqRoleDel, reqManageDel } from "../../../utils/http";
-=======
 import { reqManageDel } from "../../../utils/http";
->>>>>>> 6209bee (tjjj)
 import { successalert } from "../../../utils/alert";
 export default {
 

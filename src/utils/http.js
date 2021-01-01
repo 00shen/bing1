@@ -3,11 +3,8 @@ import qs from "qs"
 import Vue from "vue"
 import { erroralert } from "./alert"
 //开发环境使用 8080
-<<<<<<< HEAD
-=======
 import store from "../store"
 import router from "../router"
->>>>>>> 6209bee (tjjj)
 let baseUrl = "/api"
 Vue.prototype.$pre = "http://localhost:3000"
 
@@ -15,20 +12,6 @@ Vue.prototype.$pre = "http://localhost:3000"
 // let baseUrl=""
 // Vue.prototype.$pre=""
 
-<<<<<<< HEAD
-
-//响应拦截
-axios.interceptors.response.use(res => {
-    
-    //18.统一处理失败
-    if (res.data.code !== 200) {
-        erroralert(res.data.msg)
-    }
-    //统一处理list是null的情况
-    if(!res.data.list){
-        res.data.list=[]
-    }
-=======
 //请求拦截
 axios.interceptors.request.use(config=>{
     if(config.url!==baseUrl+"/api/userlogin"){
@@ -50,7 +33,6 @@ axios.interceptors.response.use(res => {
         router.push("/login")
     }
 
->>>>>>> 6209bee (tjjj)
     console.group("本次请求地址是：" + res.config.url)
     console.log(res);
     console.groupEnd()
@@ -473,8 +455,6 @@ export let reqseckillDel = (user) => {
         method: "post",
         data: qs.stringify(user)
     })
-<<<<<<< HEAD
-=======
 }
 // 登录
 export let reqLogin = (user) => {
@@ -483,5 +463,4 @@ export let reqLogin = (user) => {
         method: "post",
         data: qs.stringify(user)
     })
->>>>>>> 6209bee (tjjj)
 }

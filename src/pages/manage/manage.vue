@@ -1,20 +1,8 @@
 <template>
   <div>
-<<<<<<< HEAD
-
-    <el-button type="primary" @click="willAdd">添加</el-button>
-
-    <v-list :list="list" @init="init" @edit="edit($event)"></v-list>
-
-
-    <v-add :info="info" @init="init" :list="list" ref="add"></v-add>
-
-
-=======
     <el-button type="primary" @click="willAdd">添加</el-button>
     <v-list :list="list" @init="init" @edit="edit($event)"></v-list>
     <v-add :info="info" @init="init" :list="list" ref="add"></v-add>
->>>>>>> 6209bee (tjjj)
     <el-pagination
     layout="prev, pager, next"
     :total="total"
@@ -78,11 +66,6 @@ export default {
       this.page=e;
       this.getList()
     },
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 6209bee (tjjj)
     willAdd() {
       this.info.isshow = true;
 
@@ -90,13 +73,7 @@ export default {
     },
     edit(id){
       this.info.isshow=true;
-<<<<<<< HEAD
-
       this.info.isadd=false
-
-=======
-      this.info.isadd=false
->>>>>>> 6209bee (tjjj)
       this.$refs.add.getOne(id)
     }
   },
